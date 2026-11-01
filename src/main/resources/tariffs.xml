@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tariffs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="tariffs.xsd">
+    <Tariff id="T001">
+        <Name>Smart Start</Name>
+        <OperatorName>Kyivstar</OperatorName>
+        <Payroll>0.00</Payroll>
+        <CallPrices>
+            <InsideNetwork>0.80</InsideNetwork>
+            <OutsideNetwork>1.50</OutsideNetwork>
+            <Landline>2.00</Landline>
+        </CallPrices>
+        <SmsPrice>0.50</SmsPrice>
+        <Parameters>
+            <FavoriteNumbers>0</FavoriteNumbers>
+            <Tarification>per-minute</Tarification>
+            <ConnectionFee>0.00</ConnectionFee>
+        </Parameters>
+    </Tariff>
+    <Tariff id="T002">
+        <Name>Smart Plus</Name>
+        <OperatorName>Kyivstar</OperatorName>
+        <Payroll>150.00</Payroll>
+        <CallPrices>
+            <InsideNetwork>0.00</InsideNetwork>
+            <OutsideNetwork>1.20</OutsideNetwork>
+            <Landline>1.50</Landline>
+        </CallPrices>
+        <SmsPrice>0.40</SmsPrice>
+        <Parameters>
+            <FavoriteNumbers>2</FavoriteNumbers>
+            <Tarification>12-second</Tarification>
+            <ConnectionFee>50.00</ConnectionFee>
+        </Parameters>
+    </Tariff>
+    <Tariff id="T003">
+        <Name>Vodafone Red</Name>
+        <OperatorName>Vodafone</OperatorName>
+        <Payroll>300.00</Payroll>
+        <CallPrices>
+            <InsideNetwork>0.00</InsideNetwork>
+            <OutsideNetwork>0.50</OutsideNetwork>
+            <Landline>0.80</Landline>
+        </CallPrices>
+        <SmsPrice>0.00</SmsPrice>
+        <Parameters>
+            <FavoriteNumbers>5</FavoriteNumbers>
+            <Tarification>12-second</Tarification>
+            <ConnectionFee>100.00</ConnectionFee>
+        </Parameters>
+    </Tariff>
+    <Tariff id="T004">
+        <Name>Vodafone Light</Name>
+        <OperatorName>Vodafone</OperatorName>
+        <Payroll>90.00</Payroll>
+        <CallPrices>
+            <InsideNetwork>0.60</InsideNetwork>
+            <OutsideNetwork>1.80</OutsideNetwork>
+            <Landline>2.50</Landline>
+        </CallPrices>
+        <SmsPrice>0.60</SmsPrice>
+        <Parameters>
+            <FavoriteNumbers>1</FavoriteNumbers>
+            <Tarification>per-minute</Tarification>
+            <ConnectionFee>0.00</ConnectionFee>
+        </Parameters>
+    </Tariff>
+    <Tariff id="T005">
+        <Name>Lifecell Easy</Name>
+        <OperatorName>lifecell</OperatorName>
+        <Payroll>120.00</Payroll>
+        <CallPrices>
+            <InsideNetwork>0.00</InsideNetwork>
+            <OutsideNetwork>1.00</OutsideNetwork>
+            <Landline>1.80</Landline>
+        </CallPrices>
+        <SmsPrice>0.45</SmsPrice>
+        <Parameters>
+            <FavoriteNumbers>3</FavoriteNumbers>
+            <Tarification>per-minute</Tarification>
+            <ConnectionFee>30.00</ConnectionFee>
+        </Parameters>
+    </Tariff>
+    <Tariff id="T006">
+        <Name>Lifecell Max</Name>
+        <OperatorName>lifecell</OperatorName>
+        <Payroll>250.00</Payroll>
+        <CallPrices>
+            <InsideNetwork>0.00</InsideNetwork>
+            <OutsideNetwork>0.30</OutsideNetwork>
+            <Landline>0.50</Landline>
+        </CallPrices>
+        <SmsPrice>0.00</SmsPrice>
+        <Parameters>
+            <FavoriteNumbers>10</FavoriteNumbers>
+            <Tarification>12-second</Tarification>
+            <ConnectionFee>75.50</ConnectionFee>
+        </Parameters>
+    </Tariff>
+</Tariffs>
