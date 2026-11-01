@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="unqualified">
+
+    <!-- ===================== Simple Types ===================== -->
+
+    <!-- Money: 0 ... 1000 UAH, up to two decimal places (boundary values) -->
+    <xs:simpleType name="MoneyType">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1000"/>
+            <xs:fractionDigits value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- ID Type: letter T + 3 digits -->
+    <xs:simpleType name="TariffIdType">
+        <xs:restriction base="xs:ID">
+            <xs:pattern value="T[0-9]{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="NameType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- List of operators -->
+    <xs:simpleType name="OperatorType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Kyivstar"/>
+            <xs:enumeration value="Vodafone"/>
+            <xs:enumeration value="lifecell"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- List of tarification types -->
+    <xs:simpleType name="TarificationType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="12-second"/>
+            <xs:enumeration value="per-minute"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Number of favorite numbers: 0 .. 10 -->
+    <xs:simpleType name="FavoriteNumbersType">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="10"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- ===================== Complex Types ===================== -->
+
+    <xs:complexType name="CallPricesType">
+        <xs:sequence>
+            <xs:element name="InsideNetwork" type="MoneyType"/>
+            <xs:element name="OutsideNetwork" type="MoneyType"/>
+            <xs:element name="Landline" type="MoneyType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ParametersType">
+        <xs:sequence>
+            <xs:element name="FavoriteNumbers" type="FavoriteNumbersType"/>
+            <xs:element name="Tarification" type="TarificationType"/>
+            <xs:element name="ConnectionFee" type="MoneyType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TariffType">
+        <xs:sequence>
+            <xs:element name="Name" type="NameType"/>
+            <xs:element name="OperatorName" type="OperatorType"/>
+            <xs:element name="Payroll" type="MoneyType"/>
+            <xs:element name="CallPrices" type="CallPricesType"/>
+            <xs:element name="SmsPrice" type="MoneyType"/>
+            <xs:element name="Parameters" type="ParametersType"/>
+        </xs:sequence>
+        <!-- Mandatory attribute of ID type -->
+        <xs:attribute name="id" type="TariffIdType" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="TariffsType">
+        <xs:sequence>
+            <xs:element name="Tariff" type="TariffType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Root element -->
+    <xs:element name="Tariffs" type="TariffsType"/>
+</xs:schema>
