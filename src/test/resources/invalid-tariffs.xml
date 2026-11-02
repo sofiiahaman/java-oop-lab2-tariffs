@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tariffs>
+    <Tariff id="bad-id">
+        <Name>Broken</Name>
+        <OperatorName>UnknownOperator</OperatorName>
+        <Payroll>-5.00</Payroll>
+        <CallPrices>
+            <InsideNetwork>0.00</InsideNetwork>
+            <OutsideNetwork>1.00</OutsideNetwork>
+            <Landline>1.00</Landline>
+        </CallPrices>
+        <SmsPrice>0.50</SmsPrice>
+        <Parameters>
+            <FavoriteNumbers>99</FavoriteNumbers>
+            <Tarification>per-second</Tarification>
+            <ConnectionFee>0.00</ConnectionFee>
+        </Parameters>
+    </Tariff>
+</Tariffs>
